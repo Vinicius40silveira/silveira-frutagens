@@ -94,7 +94,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.8); /* Fundo sólido e não transparente */
+  background-color: rgba(0, 0, 0, 0.8); /* Fundo sólido */
   display: none;
   justify-content: center;
   align-items: center;
@@ -142,22 +142,6 @@ body {
 .cart-item-info {
   flex-grow: 1;
   padding-left: 10px;
-}
-
-.quantity-control button {
-  background-color: #25D366;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  font-size: 16px;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.quantity-control span {
-  font-size: 16px;
-  margin: 0 10px;
-  font-weight: bold;
 }
 
 #cart-total {
@@ -214,7 +198,7 @@ body {
 #cart-icon {
   position: fixed;
   bottom: 20px;
-  right: 90px; /* Para não sobrepor o botão do WhatsApp */
+  left: 20px; /* Carrinho no lado oposto do WhatsApp */
   background-color: #2e7d4f;
   color: white;
   font-size: 32px;
