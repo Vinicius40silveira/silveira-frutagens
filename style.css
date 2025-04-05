@@ -1,118 +1,30 @@
-/* Reset básico */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f9f5e8;
-  text-align: center;
-}
+/* style.css */ body { background-color: #f5efd7; font-family: Arial, sans-serif; margin: 0; padding: 0; text-align: center; }
 
-.logo {
-  max-width: 300px;
-  display: block;
-  margin: 20px auto;
-}
+.logo { max-width: 300px; height: auto; margin: 20px auto; display: block; }
 
-/* Grade de produtos */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; padding: 20px; max-width: 1200px; margin: 0 auto; }
 
-/* Cartões de produto */
-.product-card {
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
+.product-card { background-color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); display: flex; flex-direction: column; align-items: center; padding: 10px; position: relative; }
 
-/* Imagens dos produtos */
-.product-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: contain;
-  background-color: #fff;
-  padding: 10px;
-}
+.product-card img { max-width: 100%; height: auto; }
 
-/* Área inferior verde */
-.product-text {
-  background-color: #2e7d4f;
-  color: white;
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+hr { width: 100%; border: none; border-top: 1px solid #ccc; margin: 10px 0; }
 
-.product-text h2 {
-  font-size: 18px;
-  margin: 5px 0;
-}
+.product-text { background-color: #3a7734; color: white; padding: 10px; width: 100%; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; }
 
-.product-text p {
-  margin: 0 0 10px;
-  font-size: 15px;
-}
+.counter-controls { margin-top: 8px; display: flex; justify-content: space-between; align-items: center; width: 100%; }
 
-/* Botões de quantidade */
-.quantity-control {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 8px;
-}
+.counter-controls button { background-color: #25D366; color: white; border: none; padding: 8px 12px; font-size: 16px; border-radius: 6px; cursor: pointer; flex: 1; max-width: 50px; }
 
-.quantity-control button {
-  background-color: white;
-  color: #2e7d4f;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 8px;
-  font-size: 16px;
-  cursor: pointer;
-}
+.counter-controls span { font-size: 16px; margin: 0 10px; font-weight: bold; }
 
-.quantity-control span {
-  font-weight: bold;
-  font-size: 16px;
-}
+.whatsapp-button { display: inline-block; background-color: #25D366; color: white; padding: 12px 20px; font-size: 1.2em; text-decoration: none; border-radius: 8px; margin: 30px auto; transition: background-color 0.3s; }
 
-/* Botão do WhatsApp */
-.whatsapp-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #25d366;
-  color: white;
-  font-weight: bold;
-  border-radius: 8px;
-  padding: 10px 16px;
-  text-decoration: none;
-  font-size: 14px;
-  margin: 20px auto;
-}
+.whatsapp-button i { margin-right: 8px; }
 
-.whatsapp-button i {
-  margin-right: 8px;
-}
+.whatsapp-button:hover { background-color: #1ebe5d; }
 
-/* Responsivo */
-@media (max-width: 768px) {
-  .product-grid {
-    grid-template-columns: 1fr;
-  }
+@media (max-width: 768px) { .product-grid { grid-template-columns: 1fr; }
 
-  .logo {
-    max-width: 220px;
-  }
-}
+.counter-controls { flex-direction: row; justify-content: center; } }
+
