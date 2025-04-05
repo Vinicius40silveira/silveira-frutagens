@@ -2,7 +2,7 @@ body { background-color: #f5efd7; font-family: Arial, sans-serif; color: #2f4f2f
 
 .logo { max-width: 300px; height: auto; margin-bottom: 20px; }
 
-.product-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; justify-content: center; }
+.product-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; justify-content: center; justify-items: center; }
 
 .product-card { background-color: white; border-radius: 12px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 220px; overflow: hidden; display: flex; flex-direction: column; margin: 4px; }
 
@@ -20,9 +20,9 @@ body { background-color: #f5efd7; font-family: Arial, sans-serif; color: #2f4f2f
 
 .whatsapp-button:hover { background-color: #1ebe5d; }
 
-@media (max-width: 768px) { .product-grid { grid-template-columns: 1fr; gap: 10px; justify-content: center; } }
+@media (max-width: 768px) { .product-grid { grid-template-columns: 1fr; gap: 10px; } }
 
-@media (min-width: 769px) { .product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; justify-content: center; }
+@media (min-width: 769px) { .product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
 
 .product-card { margin: 2px; }
 
