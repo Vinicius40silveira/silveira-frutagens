@@ -12,6 +12,7 @@
       font-family: Arial, sans-serif;
       background-color: #f9f5e8;
       text-align: center;
+      position: relative;
     }
 
     .logo {
@@ -169,6 +170,25 @@
       cursor: pointer;
     }
 
+    /* WhatsApp botão */
+    .whatsapp-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #25D366;
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      padding: 10px 16px;
+      text-decoration: none;
+      font-size: 14px;
+      margin: 20px auto;
+    }
+
+    .whatsapp-button i {
+      margin-right: 8px;
+    }
+
     /* Responsivo */
     @media (max-width: 768px) {
       .product-grid {
@@ -210,7 +230,45 @@
       </div>
     </div>
 
-    <!-- Adicione outros produtos da mesma forma -->
+    <!-- Produto Exemplo 3 -->
+    <div class="product-card" data-product-id="3">
+      <img src="img/maracuja.png" alt="Maracujá">
+      <div class="product-text">
+        <h2>Maracujá</h2>
+        <p>R$10,00/kg</p>
+        <button class="add-to-cart">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+    <!-- Produto Exemplo 4 -->
+    <div class="product-card" data-product-id="4">
+      <img src="img/uva.png" alt="Uva">
+      <div class="product-text">
+        <h2>Uva</h2>
+        <p>R$8,00/kg</p>
+        <button class="add-to-cart">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+    <!-- Produto Exemplo 5 -->
+    <div class="product-card" data-product-id="5">
+      <img src="img/acerola.png" alt="Acerola">
+      <div class="product-text">
+        <h2>Acerola</h2>
+        <p>R$5,00/kg</p>
+        <button class="add-to-cart">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+    <!-- Produto Exemplo 6 -->
+    <div class="product-card" data-product-id="6">
+      <img src="img/morango.png" alt="Morango">
+      <div class="product-text">
+        <h2>Morango</h2>
+        <p>R$12,50/kg</p>
+        <button class="add-to-cart">Adicionar ao Carrinho</button>
+      </div>
+    </div>
   </div>
 
   <!-- Carrinho (Popup) -->
@@ -284,27 +342,4 @@
         itemElement.innerHTML = `
           <span>${item.name} (${item.price})</span>
           <div class="quantity-control">
-            <button class="minus">-</button>
-            <span>${item.quantity}</span>
-            <button class="plus">+</button>
-          </div>
-        `;
-
-        // Ações de quantidade
-        itemElement.querySelector('.plus').addEventListener('click', () => {
-          item.quantity++;
-          updateCart();
-        });
-        itemElement.querySelector('.minus').addEventListener('click', () => {
-          if (item.quantity > 1) {
-            item.quantity--;
-          }
-          updateCart();
-        });
-
-        cartItemsContainer.appendChild(itemElement);
-      });
-    }
-  </script>
-</body>
-</html>
+            <button class="minus">-</button
