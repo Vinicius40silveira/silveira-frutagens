@@ -14,7 +14,7 @@
 
   <!-- Grade de produtos -->
   <div class="product-grid">
-    <!-- Produto 1 -->
+    <!-- Produto 1 - Banana -->
     <div class="product-card">
       <img src="img/banana.png" alt="Banana">
       <div class="product-text">
@@ -23,7 +23,7 @@
         <button class="add-to-cart" data-product="Banana" data-price="2.5" data-image="img/banana.png">Adicionar ao carrinho</button>
       </div>
     </div>
-    <!-- Produto 2 -->
+    <!-- Produto 2 - Maçã -->
     <div class="product-card">
       <img src="img/maca.png" alt="Maçã">
       <div class="product-text">
@@ -32,31 +32,61 @@
         <button class="add-to-cart" data-product="Maçã" data-price="3.0" data-image="img/maca.png">Adicionar ao carrinho</button>
       </div>
     </div>
-    <!-- Adicionar mais produtos aqui -->
-  </div>
-
-  <!-- Carrinho de Compras -->
-  <div id="cart-popup">
-    <div class="cart-content">
-      <div class="cart-header">
-        <span id="close-cart">&times;</span>
-        <h2>Carrinho</h2>
+    <!-- Produto 3 - Uva -->
+    <div class="product-card">
+      <img src="img/uva.png" alt="Uva">
+      <div class="product-text">
+        <h2>Uva</h2>
+        <p>R$ 5,00</p>
+        <button class="add-to-cart" data-product="Uva" data-price="5.0" data-image="img/uva.png">Adicionar ao carrinho</button>
       </div>
-      <div id="cart-items"></div>
-      <div id="cart-total">Total: R$ 0,00</div>
-      <button id="checkout-button">Finalizar Compra</button>
+    </div>
+    <!-- Produto 4 - Acerola -->
+    <div class="product-card">
+      <img src="img/acerola.png" alt="Acerola">
+      <div class="product-text">
+        <h2>Acerola</h2>
+        <p>R$ 4,00</p>
+        <button class="add-to-cart" data-product="Acerola" data-price="4.0" data-image="img/acerola.png">Adicionar ao carrinho</button>
+      </div>
+    </div>
+    <!-- Produto 5 - Morango -->
+    <div class="product-card">
+      <img src="img/morango.png" alt="Morango">
+      <div class="product-text">
+        <h2>Morango</h2>
+        <p>R$ 6,00</p>
+        <button class="add-to-cart" data-product="Morango" data-price="6.0" data-image="img/morango.png">Adicionar ao carrinho</button>
+      </div>
+    </div>
+    <!-- Produto 6 - Laranja -->
+    <div class="product-card">
+      <img src="img/laranja.png" alt="Laranja">
+      <div class="product-text">
+        <h2>Laranja</h2>
+        <p>R$ 3,50</p>
+        <button class="add-to-cart" data-product="Laranja" data-price="3.5" data-image="img/laranja.png">Adicionar ao carrinho</button>
+      </div>
     </div>
   </div>
 
-  <!-- Botão do WhatsApp -->
-  <a href="https://api.whatsapp.com/send?phone=+5511999999999" class="whatsapp-button">
-    <i class="fab fa-whatsapp"></i>
-  </a>
+  <!-- Carrinho de Compras Popup -->
+  <div id="cart-popup" class="cart-popup">
+    <div class="cart-popup-content">
+      <h2>Carrinho de Compras</h2>
+      <div id="cart-items"></div>
+      <button id="close-cart" class="close-cart">Fechar</button>
+    </div>
+  </div>
 
-  <!-- Ícone do Carrinho -->
-  <div id="cart-icon">
-    <i class="fas fa-shopping-cart"></i>
-    <div id="cart-notification-icon" style="display: none;">1</div>
+  <!-- Botões de ícones de Carrinho e WhatsApp -->
+  <div class="fixed-icons">
+    <a href="https://wa.me/5531987654321" target="_blank" class="whatsapp-icon">
+      <span class="whatsapp-icon-inner"></span>
+    </a>
+    <button class="cart-icon" id="open-cart">
+      <span class="cart-icon-inner"></span>
+    </button>
   </div>
 </body>
 </html>
