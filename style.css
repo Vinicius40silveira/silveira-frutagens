@@ -140,7 +140,7 @@ body {
   height: 35px;
 }
 
-/* Responsivo */
+/* Responsivo para dispositivos móveis */
 @media (max-width: 768px) {
   .product-grid {
     grid-template-columns: 1fr;
@@ -151,9 +151,36 @@ body {
   }
 
   .fixed-icons {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
+    bottom: 20px; /* Ajustando para ficar no fundo */
+    left: 10px;   /* Ajustando o alinhamento para a esquerda */
+    right: 10px;  /* Ajustando o alinhamento para a direita */
+    justify-content: space-between; /* Espaço entre os ícones */
+  }
+
+  .whatsapp-icon,
+  .cart-icon {
+    width: 50px;  /* Reduzindo o tamanho dos ícones no mobile */
+    height: 50px;
+  }
+
+  .whatsapp-icon-img,
+  .cart-icon-img {
+    width: 30px;  /* Ajustando o tamanho das imagens dos ícones */
+    height: 30px;
+  }
+}
+
+@media (min-width: 769px) {
+  /* Desktop: ícones com o tamanho original */
+  .whatsapp-icon,
+  .cart-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .whatsapp-icon-img,
+  .cart-icon-img {
+    width: 35px;
+    height: 35px;
   }
 }
