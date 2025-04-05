@@ -13,67 +13,108 @@
 
     <!-- Grade de produtos -->
     <div class="product-grid">
-        <!-- Produto 1 -->
+        <!-- Produto 1 - Banana -->
         <div class="product-card">
-            <img src="banana.jpg" alt="Banana">
+            <img src="banana.png" alt="Banana">
             <div class="product-text">
                 <h2>Banana</h2>
-                <p>R$ 5,00</p>
+                <p>R$ 5,00/kg</p>
                 <div class="quantity-control">
-                    <button>-</button>
-                    <span>1</span>
-                    <button>+</button>
+                    <button class="quantity-decrease">-</button>
+                    <span class="quantity">1</span>
+                    <button class="quantity-increase">+</button>
                 </div>
-                <div class="cart-notification" id="cart-notification-1">1</div>
+                <div class="cart-notification" id="cart-notification-1">0</div>
                 <button class="add-to-cart" data-product="banana">Adicionar ao Carrinho</button>
             </div>
         </div>
 
-        <!-- Produto 2 -->
+        <!-- Produto 2 - Maçã -->
         <div class="product-card">
-            <img src="maca.jpg" alt="Maçã">
+            <img src="maca.png" alt="Maçã">
             <div class="product-text">
                 <h2>Maçã</h2>
-                <p>R$ 3,00</p>
+                <p>R$ 3,00/kg</p>
                 <div class="quantity-control">
-                    <button>-</button>
-                    <span>1</span>
-                    <button>+</button>
+                    <button class="quantity-decrease">-</button>
+                    <span class="quantity">1</span>
+                    <button class="quantity-increase">+</button>
                 </div>
-                <div class="cart-notification" id="cart-notification-2">1</div>
+                <div class="cart-notification" id="cart-notification-2">0</div>
                 <button class="add-to-cart" data-product="maca">Adicionar ao Carrinho</button>
             </div>
         </div>
 
-        <!-- Adicione mais produtos aqui conforme necessário -->
+        <!-- Produto 3 - Uva -->
+        <div class="product-card">
+            <img src="uva.png" alt="Uva">
+            <div class="product-text">
+                <h2>Uva</h2>
+                <p>R$ 7,00/kg</p>
+                <div class="quantity-control">
+                    <button class="quantity-decrease">-</button>
+                    <span class="quantity">1</span>
+                    <button class="quantity-increase">+</button>
+                </div>
+                <div class="cart-notification" id="cart-notification-3">0</div>
+                <button class="add-to-cart" data-product="uva">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+
+        <!-- Produto 4 - Acerola -->
+        <div class="product-card">
+            <img src="acerola.png" alt="Acerola">
+            <div class="product-text">
+                <h2>Acerola</h2>
+                <p>R$ 6,00/kg</p>
+                <div class="quantity-control">
+                    <button class="quantity-decrease">-</button>
+                    <span class="quantity">1</span>
+                    <button class="quantity-increase">+</button>
+                </div>
+                <div class="cart-notification" id="cart-notification-4">0</div>
+                <button class="add-to-cart" data-product="acerola">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+
+        <!-- Produto 5 - Morango -->
+        <div class="product-card">
+            <img src="morango.png" alt="Morango">
+            <div class="product-text">
+                <h2>Morango</h2>
+                <p>R$ 8,00/kg</p>
+                <div class="quantity-control">
+                    <button class="quantity-decrease">-</button>
+                    <span class="quantity">1</span>
+                    <button class="quantity-increase">+</button>
+                </div>
+                <div class="cart-notification" id="cart-notification-5">0</div>
+                <button class="add-to-cart" data-product="morango">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+
+        <!-- Produto 6 - Maracujá -->
+        <div class="product-card">
+            <img src="maracuja.png" alt="Maracujá">
+            <div class="product-text">
+                <h2>Maracujá</h2>
+                <p>R$ 10,00/kg</p>
+                <div class="quantity-control">
+                    <button class="quantity-decrease">-</button>
+                    <span class="quantity">1</span>
+                    <button class="quantity-increase">+</button>
+                </div>
+                <div class="cart-notification" id="cart-notification-6">0</div>
+                <button class="add-to-cart" data-product="maracuja">Adicionar ao Carrinho</button>
+            </div>
+        </div>
     </div>
 
-    <!-- Botão de WhatsApp -->
+    <!-- Botão do WhatsApp -->
     <a href="https://wa.me/123456789" class="whatsapp-button">
         <i class="fab fa-whatsapp"></i> Fale Conosco
     </a>
 
     <!-- Carrinho de Compras (Popup) -->
     <div class="cart-popup" id="cart-popup">
-        <div class="cart-popup-content">
-            <div class="cart-popup-header">
-                Carrinho de Compras
-            </div>
-            <div class="cart-items" id="cart-items">
-                <!-- Itens do carrinho serão adicionados aqui -->
-            </div>
-            <button class="checkout-button">Finalizar Compra</button>
-            <button class="close-cart" id="close-cart">Fechar</button>
-        </div>
-    </div>
-
-    <!-- Ícone de Carrinho -->
-    <div class="cart-icon" id="cart-icon">
-        <i class="fas fa-shopping-cart"></i>
-        <div class="cart-notification" id="cart-count">0</div>
-    </div>
-
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="script.js"></script>
-</body>
-</html>
+        <div
