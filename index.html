@@ -1,91 +1,96 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!DOCTYPE html><html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Silveira Frutagens</title>
   <style>
     body {
-      background-color: #f3ecd9; /* Cor exata da imagem */
+      background-color: #f5efd7;
       font-family: Arial, sans-serif;
-      color: white; /* Deixa o texto branco */
+      color: #2f4f2f;
       text-align: center;
       padding: 20px;
-      margin: 0;
-    }
+    }img.logo {
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 20px;
+}
 
-    img.logo {
-      max-width: 300px;
-      height: auto;
-      margin-bottom: 20px;
-    }
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #3c5a3c;
+}
 
-    h1 {
-      font-size: 2em;
-      margin-bottom: 10px;
-    }
+.produto {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px auto;
+  max-width: 400px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
 
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0 auto 30px;
-      max-width: 400px;
-      text-align: left;
-    }
+.produto img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 15px;
+  border-radius: 4px;
+}
 
-    li {
-      font-size: 1.2em;
-      margin: 8px 0;
-    }
+.produto span {
+  font-size: 1.2em;
+  color: #2f4f2f;
+}
 
-    .whatsapp-button {
-      display: inline-block;
-      background-color: #25D366;
-      color: white;
-      padding: 12px 20px;
-      font-size: 1.2em;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background-color 0.3s;
-    }
+.whatsapp-button {
+  display: inline-block;
+  background-color: #25D366;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1.2em;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+  margin-top: 30px;
+}
 
-    .whatsapp-button:hover {
-      background-color: #1ebe5d;
-    }
+.whatsapp-button:hover {
+  background-color: #1ebe5d;
+}
 
-    @media (max-width: 600px) {
-      ul {
-        max-width: 90%;
-        text-align: center;
-      }
+@media (max-width: 600px) {
+  .produto {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+}
 
-      li {
-        font-size: 1.1em;
-      }
-    }
   </style>
 </head>
-<body>
-
-  <img src="img/frutagens.png" alt="Logo Silveira Frutagens" class="logo">
-
-  <h1>Produtos</h1>
-
-  <ul>
-
-    <li><img src="img/banana.png" alt="Banana" class="produto-img"> Banana: R$3,50/kg</li>
-    <li><img src="img/maca.png" alt="Maçã" class="produto-img"> Maçã: R$5,50/kg</li>
-    <li><img src="img/maracuja.png" alt="Maracujá" class="produto-img"> Maracujá: R$10,00/kg</li>
-    <li><img src="img/uva.png" alt="Uva" class="produto-img"> Uva: R$8,00/kg</li>
-    <li><img src="img/acerola.png" alt="Acerola" class="produto-img"> Acerola: R$5,00/kg</li>
-    <li><img src="img/morango.png" alt="Morango" class="produto-img"> Morango: R$12,50/kg</li>
-
-  </ul>
-
-
-  <a class="whatsapp-button" href="https://wa.me/seunumero" target="_blank">
+<body>  <img src="img/logo.png" alt="Logo Silveira Frutagens" class="logo">  <h1>Produtos</h1>  <div class="produto">
+    <img src="img/banana.png" alt="Banana">
+    <span>Banana: R$3,50/kg</span>
+  </div>  <div class="produto">
+    <img src="img/maca.png" alt="Maçã">
+    <span>Maçã: R$5,50/kg</span>
+  </div>  <div class="produto">
+    <img src="img/maracuja.png" alt="Maracujá">
+    <span>Maracujá: R$10,00/kg</span>
+  </div>  <div class="produto">
+    <img src="img/uva.png" alt="Uva">
+    <span>Uva: R$8,00/kg</span>
+  </div>  <div class="produto">
+    <img src="img/acerola.png" alt="Acerola">
+    <span>Acerola: R$5,00/kg</span>
+  </div>  <div class="produto">
+    <img src="img/morango.png" alt="Morango">
+    <span>Morango: R$12,50/kg</span>
+  </div>  <a class="whatsapp-button" href="https://wa.me/seunumero" target="_blank">
     Fale conosco no WhatsApp
-  </a>
-
-</body>
+  </a></body>
 </html>
