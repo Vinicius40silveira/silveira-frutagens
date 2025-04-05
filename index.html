@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Silveira Frutagens</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-  <img src="img/frutagens.png" alt="Logo Silveira Frutagens" class="logo">  
+
+  <img src="img/frutagens.png" alt="Logo Silveira Frutagens" class="logo">
 
   <div class="product-grid">
 
@@ -18,7 +19,11 @@
       <div class="product-text">
         <h2>Banana</h2>
         <p>R$3,50/kg</p>
-        <button class="add-button"><i class="fas fa-plus"></i> Adicionar</button>
+      </div>
+      <div class="button-group">
+        <button class="remove-button" onclick="updateQuantity('banana', -1)">-</button>
+        <span id="banana-qty">0</span>
+        <button class="add-button" onclick="updateQuantity('banana', 1)">+</button>
       </div>
     </div>
 
@@ -28,7 +33,11 @@
       <div class="product-text">
         <h2>Maçã</h2>
         <p>R$5,50/kg</p>
-        <button class="add-button"><i class="fas fa-plus"></i> Adicionar</button>
+      </div>
+      <div class="button-group">
+        <button class="remove-button" onclick="updateQuantity('maca', -1)">-</button>
+        <span id="maca-qty">0</span>
+        <button class="add-button" onclick="updateQuantity('maca', 1)">+</button>
       </div>
     </div>
 
@@ -38,7 +47,11 @@
       <div class="product-text">
         <h2>Maracujá</h2>
         <p>R$10,00/kg</p>
-        <button class="add-button"><i class="fas fa-plus"></i> Adicionar</button>
+      </div>
+      <div class="button-group">
+        <button class="remove-button" onclick="updateQuantity('maracuja', -1)">-</button>
+        <span id="maracuja-qty">0</span>
+        <button class="add-button" onclick="updateQuantity('maracuja', 1)">+</button>
       </div>
     </div>
 
@@ -48,7 +61,11 @@
       <div class="product-text">
         <h2>Uva</h2>
         <p>R$8,00/kg</p>
-        <button class="add-button"><i class="fas fa-plus"></i> Adicionar</button>
+      </div>
+      <div class="button-group">
+        <button class="remove-button" onclick="updateQuantity('uva', -1)">-</button>
+        <span id="uva-qty">0</span>
+        <button class="add-button" onclick="updateQuantity('uva', 1)">+</button>
       </div>
     </div>
 
@@ -58,7 +75,11 @@
       <div class="product-text">
         <h2>Acerola</h2>
         <p>R$5,00/kg</p>
-        <button class="add-button"><i class="fas fa-plus"></i> Adicionar</button>
+      </div>
+      <div class="button-group">
+        <button class="remove-button" onclick="updateQuantity('acerola', -1)">-</button>
+        <span id="acerola-qty">0</span>
+        <button class="add-button" onclick="updateQuantity('acerola', 1)">+</button>
       </div>
     </div>
 
@@ -68,15 +89,29 @@
       <div class="product-text">
         <h2>Morango</h2>
         <p>R$12,50/kg</p>
-        <button class="add-button"><i class="fas fa-plus"></i> Adicionar</button>
+      </div>
+      <div class="button-group">
+        <button class="remove-button" onclick="updateQuantity('morango', -1)">-</button>
+        <span id="morango-qty">0</span>
+        <button class="add-button" onclick="updateQuantity('morango', 1)">+</button>
       </div>
     </div>
 
-  </div>  
+  </div>
 
   <a class="whatsapp-button" href="https://wa.me/seunumero" target="_blank">
     <i class="fab fa-whatsapp"></i> Fale conosco no WhatsApp
   </a>
 
+  <script>
+    const quantities = {};
+
+    function updateQuantity(product, change) {
+      if (!quantities[product]) quantities[product] = 0;
+      quantities[product] += change;
+      if (quantities[product] < 0) quantities[product] = 0;
+      document.getElementById(`${product}-qty`).textContent = quantities[product];
+    }
+  </script>
 </body>
 </html>
