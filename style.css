@@ -1,14 +1,14 @@
 body { background-color: #f5efd7; font-family: Arial, sans-serif; color: #2f4f2f; text-align: center; padding: 20px; }
 
-img.logo { max-width: 200px; height: auto; margin-bottom: 20px; }
+img.logo { max-width: 150px; height: auto; margin-bottom: 20px; }
 
 h1 { font-size: 2em; margin-bottom: 20px; color: #3c5a3c; }
 
 .produto { background-color: white; border: 1px solid #ccc; border-radius: 8px; padding: 10px; margin: 10px auto; max-width: 400px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); display: flex; flex-direction: column; align-items: center; }
 
-.produto img { width: 100px; height: 100px; object-fit: cover; margin-bottom: 10px; border-radius: 4px; }
+.produto img { width: 100px; height: 100px; object-fit: cover; margin-bottom: 10px; border-radius: 4px; border-bottom: 1px solid #ccc; padding-bottom: 10px; }
 
-.produto span { font-size: 1.2em; color: #2f4f2f; }
+.produto span { font-size: 1.2em; color: #2f4f2f; padding-top: 10px; }
 
 .whatsapp-button { display: inline-block; background-color: #25D366; color: white; padding: 12px 20px; font-size: 1.2em; text-decoration: none; border-radius: 8px; transition: background-color 0.3s; margin-top: 30px; }
 
