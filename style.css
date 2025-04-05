@@ -1,23 +1,80 @@
-body { background-color: #f5efd7; font-family: Arial, sans-serif; color: #2f4f2f; text-align: center; padding: 20px; }
+body {
+  background-color: #f5efd7;
+  font-family: Arial, sans-serif;
+  color: #2f4f2f;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
 
-img.logo { max-width: 150px; height: auto; margin-bottom: 20px; }
+.logo {
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 20px;
+}
 
-h1 { font-size: 2em; margin-bottom: 20px; color: #3c5a3c; }
+h1 {
+  font-size: 2em;
+  margin-bottom: 30px;
+}
 
-.produto { background-color: white; border: 1px solid #ccc; border-radius: 8px; padding: 10px; margin: 10px auto; max-width: 400px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); display: flex; flex-direction: column; align-items: center; }
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
 
-.produto img { width: 100px; height: 100px; object-fit: cover; border-radius: 4px; }
+.product-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 220px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
 
-.linha { width: 100%; height: 1px; background-color: #ccc; margin: 10px 0; }
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-card hr {
+  border: none;
+  height: 2px;
+  background-color: #2f4f2f;
+  margin: 0;
+}
 
 .product-text {
-  background-color: #2f4f2f; /* Verde escuro como nas letras do logo */  color: white;  padding: 10px;  flex: 1;  display: flex;  flex-direction: column; justify-content: center;}
+  background-color: #2f4f2f; /* verde escuro das letras do logo */
+  color: white;
+  padding: 12px;
+}
 
-.produto span { font-size: 1.2em; color: #2f4f2f; padding-top: 10px; }
+.product-text h2 {
+  margin: 0;
+  font-size: 1.2em;
+}
 
-.whatsapp-button { display: inline-block; background-color: #25D366; color: white; padding: 12px 20px; font-size: 1.2em; text-decoration: none; border-radius: 8px; transition: background-color 0.3s; margin-top: 30px; }
+.product-text p {
+  margin: 5px 0 0;
+}
 
-.whatsapp-button:hover { background-color: #1ebe5d; }
+.whatsapp-button {
+  display: inline-block;
+  background-color: #25D366;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1.2em;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+  margin-top: 40px;
+}
 
-@media (max-width: 600px) { .produto { max-width: 90%; } }
-
+.whatsapp-button:hover {
+  background-color: #1ebe5d;
+}
