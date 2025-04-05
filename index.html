@@ -5,11 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loja de Produtos</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
 
     <!-- Logo -->
-    <img src="img/logo.png" alt="Logo da Loja" class="logo">
+    <img src="img/frutagem.png" alt="Logo da Loja" class="logo">
+
+    <!-- Ícone de Carrinho -->
+    <div id="cart-icon" class="cart-icon">
+        <i class="fas fa-shopping-cart"></i>
+        <div class="cart-notification" id="cart-notification-icon">0</div>
+    </div>
 
     <!-- Grade de produtos -->
     <div class="product-grid">
@@ -19,19 +26,17 @@
             <div class="product-text">
                 <h2>Banana</h2>
                 <p>R$ 5,00/kg</p>
-                <div class="cart-notification" id="cart-notification-1">0</div>
-                <button class="add-to-cart" data-product="banana">Adicionar ao Carrinho</button>
+                <button class="add-to-cart" data-product="banana" data-price="5">Adicionar ao Carrinho</button>
             </div>
         </div>
 
         <!-- Produto 2 - Maçã -->
         <div class="product-card">
-            <img src="img/maca.png" alt="Maçã">
+            <img src="img/maçã.png" alt="Maçã">
             <div class="product-text">
                 <h2>Maçã</h2>
                 <p>R$ 3,00/kg</p>
-                <div class="cart-notification" id="cart-notification-2">0</div>
-                <button class="add-to-cart" data-product="maca">Adicionar ao Carrinho</button>
+                <button class="add-to-cart" data-product="maca" data-price="3">Adicionar ao Carrinho</button>
             </div>
         </div>
 
@@ -41,8 +46,7 @@
             <div class="product-text">
                 <h2>Maracujá</h2>
                 <p>R$ 10,00/kg</p>
-                <div class="cart-notification" id="cart-notification-3">0</div>
-                <button class="add-to-cart" data-product="maracuja">Adicionar ao Carrinho</button>
+                <button class="add-to-cart" data-product="maracuja" data-price="10">Adicionar ao Carrinho</button>
             </div>
         </div>
 
@@ -52,8 +56,7 @@
             <div class="product-text">
                 <h2>Uva</h2>
                 <p>R$ 7,00/kg</p>
-                <div class="cart-notification" id="cart-notification-4">0</div>
-                <button class="add-to-cart" data-product="uva">Adicionar ao Carrinho</button>
+                <button class="add-to-cart" data-product="uva" data-price="7">Adicionar ao Carrinho</button>
             </div>
         </div>
 
@@ -63,8 +66,7 @@
             <div class="product-text">
                 <h2>Acerola</h2>
                 <p>R$ 6,00/kg</p>
-                <div class="cart-notification" id="cart-notification-5">0</div>
-                <button class="add-to-cart" data-product="acerola">Adicionar ao Carrinho</button>
+                <button class="add-to-cart" data-product="acerola" data-price="6">Adicionar ao Carrinho</button>
             </div>
         </div>
 
@@ -74,22 +76,17 @@
             <div class="product-text">
                 <h2>Morango</h2>
                 <p>R$ 8,00/kg</p>
-                <div class="cart-notification" id="cart-notification-6">0</div>
-                <button class="add-to-cart" data-product="morango">Adicionar ao Carrinho</button>
+                <button class="add-to-cart" data-product="morango" data-price="8">Adicionar ao Carrinho</button>
             </div>
         </div>
     </div>
-
-    <!-- Botão do WhatsApp -->
-    <a href="https://wa.me/123456789" class="whatsapp-button">
-        <i class="fab fa-whatsapp"></i> Fale Conosco
-    </a>
 
     <!-- Carrinho de Compras (Popup) -->
     <div class="cart-popup" id="cart-popup">
         <div class="cart-popup-content">
             <div class="cart-popup-header">
                 Carrinho de Compras
+                <button id="close-cart" class="close-button">Fechar</button>
             </div>
             <div class="cart-items" id="cart-items">
                 <!-- Itens do carrinho aparecerão aqui -->
@@ -99,9 +96,13 @@
                 <span id="cart-total-value">R$ 0,00</span>
             </div>
             <button id="checkout-button">Finalizar Compra</button>
-            <button id="close-cart" class="close-button">Fechar</button>
         </div>
     </div>
+
+    <!-- Botão do WhatsApp -->
+    <a href="https://wa.me/123456789" class="whatsapp-button">
+        <i class="fab fa-whatsapp"></i> Fale Conosco
+    </a>
 
     <script src="script.js"></script>
 
