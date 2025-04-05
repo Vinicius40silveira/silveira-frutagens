@@ -47,17 +47,19 @@
       color: white;
       padding: 15px;
       display: flex;
-      justify-content: space-between;
-      align-items: center; /* Alinha os itens no centro */
+      flex-direction: column;
+      align-items: center;
     }
 
     .product-info {
-      text-align: left; /* Alinha o texto à esquerda */
+      display: flex;
+      flex-direction: column; /* Mantenho nome e preço em uma coluna */
+      text-align: center;
     }
 
     .product-info h2 {
       font-size: 18px;
-      margin: 0 0 5px;
+      margin: 0;
     }
 
     .product-info p {
@@ -113,7 +115,7 @@
           <h2>Banana</h2>
           <p>R$3,50/kg</p>
         </div>
-        <div>
+        <div class="quantity-controls">
           <button class="quantity-btn minus">-</button>
           <span class="quantity">0</span>
           <button class="quantity-btn plus">+</button>
@@ -128,7 +130,7 @@
           <h2>Maçã</h2>
           <p>R$5,50/kg</p>
         </div>
-        <div>
+        <div class="quantity-controls">
           <button class="quantity-btn minus">-</button>
           <span class="quantity">0</span>
           <button class="quantity-btn plus">+</button>
@@ -143,7 +145,7 @@
           <h2>Maracujá</h2>
           <p>R$10,00/kg</p>
         </div>
-        <div>
+        <div class="quantity-controls">
           <button class="quantity-btn minus">-</button>
           <span class="quantity">0</span>
           <button class="quantity-btn plus">+</button>
@@ -158,7 +160,7 @@
           <h2>Uva</h2>
           <p>R$8,00/kg</p>
         </div>
-        <div>
+        <div class="quantity-controls">
           <button class="quantity-btn minus">-</button>
           <span class="quantity">0</span>
           <button class="quantity-btn plus">+</button>
@@ -173,7 +175,7 @@
           <h2>Acerola</h2>
           <p>R$5,00/kg</p>
         </div>
-        <div>
+        <div class="quantity-controls">
           <button class="quantity-btn minus">-</button>
           <span class="quantity">0</span>
           <button class="quantity-btn plus">+</button>
@@ -188,7 +190,7 @@
           <h2>Morango</h2>
           <p>R$12,50/kg</p>
         </div>
-        <div>
+        <div class="quantity-controls">
           <button class="quantity-btn minus">-</button>
           <span class="quantity">0</span>
           <button class="quantity-btn plus">+</button>
