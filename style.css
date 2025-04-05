@@ -12,6 +12,11 @@ header {
     text-align: center;
 }
 
+header img {
+    max-height: 100px;
+    width: auto;
+}
+
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -95,14 +100,4 @@ header {
 
 .cart-btn img {
     width: 30px;
-    height: 30px;
-}
-
-/* Efeito de hover para os botões fixos */
-.fixed-btn:hover {
-    opacity: 0.8;
-}
-
-header img {
-    max-height: 50px;
-}
+    height: 30px
