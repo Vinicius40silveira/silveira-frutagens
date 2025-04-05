@@ -12,15 +12,15 @@ hr { width: 100%; border: none; border-top: 1px solid #ccc; margin: 10px 0; }
 
 .product-text { background-color: #3a7734; color: white; padding: 10px; width: 100%; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; }
 
-.product-info { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+.product-info { display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 8px; }
 
 .product-info h2, .product-info p { margin: 0; }
 
-.counter-controls { display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: 8px; }
+.counter-controls { display: flex; justify-content: center; align-items: center; gap: 10px; width: 100%; }
 
 .counter-controls button { background-color: #25D366; color: white; border: none; padding: 8px 12px; font-size: 16px; border-radius: 6px; cursor: pointer; width: 40px; }
 
-.counter-controls span { font-size: 16px; margin: 0 10px; font-weight: bold; }
+.counter-controls span { font-size: 16px; font-weight: bold; }
 
 .whatsapp-button { display: inline-block; background-color: #25D366; color: white; padding: 12px 20px; font-size: 1.2em; text-decoration: none; border-radius: 8px; margin: 30px auto; transition: background-color 0.3s; }
 
@@ -30,5 +30,5 @@ hr { width: 100%; border: none; border-top: 1px solid #ccc; margin: 10px 0; }
 
 @media (max-width: 768px) { .product-grid { grid-template-columns: 1fr; }
 
-.counter-controls { flex-direction: row; justify-content: center; } }
+.counter-controls { justify-content: center; } }
 
