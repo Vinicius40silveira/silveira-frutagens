@@ -12,9 +12,13 @@ hr { width: 100%; border: none; border-top: 1px solid #ccc; margin: 10px 0; }
 
 .product-text { background-color: #3a7734; color: white; padding: 10px; width: 100%; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; }
 
-.counter-controls { margin-top: 8px; display: flex; justify-content: space-between; align-items: center; width: 100%; }
+.product-info { display: flex; justify-content: space-between; align-items: center; width: 100%; }
 
-.counter-controls button { background-color: #25D366; color: white; border: none; padding: 8px 12px; font-size: 16px; border-radius: 6px; cursor: pointer; flex: 1; max-width: 50px; }
+.product-info h2, .product-info p { margin: 0; }
+
+.counter-controls { display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: 8px; }
+
+.counter-controls button { background-color: #25D366; color: white; border: none; padding: 8px 12px; font-size: 16px; border-radius: 6px; cursor: pointer; width: 40px; }
 
 .counter-controls span { font-size: 16px; margin: 0 10px; font-weight: bold; }
 
