@@ -8,3 +8,12 @@ body {
 .produtos {
   color: black;
 }
+
+.produto-img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  vertical-align: middle;
+  margin-right: 10px;
+  border-radius: 50%;
+}
