@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const cart = {};
+    const cart = {}; // Objeto para armazenar os itens do carrinho
     const cartIcon = document.getElementById("cart-icon");
     const cartNotification = document.getElementById("cart-notification-icon");
     const cartPopup = document.getElementById("cart-popup");
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Função para atualizar o carrinho
     function updateCart() {
-        cartItemsContainer.innerHTML = '';
+        cartItemsContainer.innerHTML = ''; // Limpa o carrinho
         let total = 0;
         let totalItems = 0;
 
@@ -63,4 +63,45 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Atualiza a notificação do carrinho
         cartNotification.textContent = totalItems;
-        document.getElementById("cart-total-value").textContent = `R$
+        document.getElementById("cart-total-value").textContent = `R$ ${total.toFixed(2)}`;
+    }
+
+    // Função para alterar a quantidade do produto
+    window.changeQuantity = (productName, delta) => {
+        if (cart[productName]) {
+            cart[productName].quantity += delta;
+
+            if (cart[productName].quantity <= 0) {
+                delete cart[productName]; // Remove o produto do carrinho se a quantidade for zero ou negativa
+            }
+
+            // Atualiza o carrinho na interface
+            updateCart();
+        }
+    };
+
+    // Evento para abrir o carrinho
+    cartIcon.addEventListener("click", () => {
+        cartPopup.style.display = "flex"; // Abre o popup do carrinho
+    });
+
+    // Evento para fechar o carrinho
+    closeCartButton.addEventListener("click", () => {
+        cartPopup.style.display = "none"; // Fecha o popup do carrinho
+    });
+
+    // Funcionalidade para finalizar a compra
+    const checkoutButton = document.getElementById("checkout-button");
+    checkoutButton.addEventListener("click", () => {
+        if (Object.keys(cart).length === 0) {
+            alert("Seu carrinho está vazio!");
+        } else {
+            alert("Compra finalizada com sucesso!");
+            // Limpar o carrinho após a finalização
+            for (const product in cart) {
+                delete cart[product];
+            }
+            updateCart(); // Atualiza o carrinho
+        }
+    });
+});
