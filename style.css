@@ -2,17 +2,15 @@ body { background-color: #f5efd7; font-family: Arial, sans-serif; color: #2f4f2f
 
 .logo { max-width: 300px; height: auto; margin-bottom: 20px; }
 
-h1 { font-size: 2em; margin-bottom: 30px; text-align: left; }
-
 .product-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; justify-content: center; }
 
-.product-card { background-color: white; border-radius: 12px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 220px; overflow: hidden; display: flex; flex-direction: column; }
+.product-card { background-color: white; border-radius: 12px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 220px; overflow: hidden; display: flex; flex-direction: column; margin: 4px; }
 
 .product-card img { width: 100%; height: 200px; object-fit: cover; }
 
 .product-card hr { border: none; height: 2px; background-color: #2f4f2f; margin: 0; }
 
-.product-text { background-color: #2f4f2f; color: white; padding: 12px; }
+.product-text { background-color: #2f4f2f; color: white; padding: 10px; }
 
 .product-text h2 { margin: 0; font-size: 1.2em; }
 
@@ -22,9 +20,11 @@ h1 { font-size: 2em; margin-bottom: 30px; text-align: left; }
 
 .whatsapp-button:hover { background-color: #1ebe5d; }
 
-@media (max-width: 768px) { h1 { text-align: center; }
+@media (max-width: 768px) { .product-grid { grid-template-columns: 1fr; gap: 10px; justify-content: center; } }
 
-.product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; justify-content: center; } }
+@media (min-width: 769px) { .product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; justify-content: center; }
 
-@media (min-width: 769px) { .product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.product-card { margin: 2px; }
+
+.product-text { padding: 8px; } }
 
