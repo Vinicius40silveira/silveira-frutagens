@@ -15,15 +15,18 @@ body {
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  gap: 15px;
   justify-items: center;
+  align-items: stretch;
 }
 
 .product-card {
+  display: flex;
+  flex-direction: column;
   background-color: white;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   max-width: 300px;
   width: 100%;
 }
@@ -41,12 +44,14 @@ hr {
 }
 
 .product-text {
-  background-color: #2e8b57; /* Verde da imagem */
+  background-color: #2e8b57;
   color: white;
   padding: 15px;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .product-text h2 {
@@ -62,6 +67,7 @@ hr {
 .button-group {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   margin-top: 10px;
 }
@@ -83,9 +89,10 @@ hr {
   background-color: #e0e0e0;
 }
 
-#banana-qty, #maca-qty, #maracuja-qty, #uva-qty, #acerola-qty, #morango-qty {
+.quantity {
   min-width: 20px;
   display: inline-block;
+  font-weight: bold;
 }
 
 .whatsapp-button {
@@ -102,6 +109,10 @@ hr {
 
 .whatsapp-button:hover {
   background-color: #1ebe5d;
+}
+
+.whatsapp-button i {
+  margin-right: 8px;
 }
 
 @media (max-width: 600px) {
