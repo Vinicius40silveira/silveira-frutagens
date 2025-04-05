@@ -52,8 +52,6 @@
     }
 
     .product-info {
-      display: flex;
-      flex-direction: column; /* Mantenho nome e preço em uma coluna */
       text-align: center;
     }
 
@@ -66,22 +64,15 @@
       margin: 0;
     }
 
-    .quantity-btn {
-      background: white;
-      border: none;
-      border-radius: 50%;
-      color: #2e7d32;
-      font-weight: bold;
-      font-size: 18px;
-      width: 30px;
-      height: 30px;
+    .add-to-cart {
+      background-color: #ff9800;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin-top: 15px;
       cursor: pointer;
-    }
-
-    .quantity {
       font-weight: bold;
-      display: none;
-      margin-top: 5px;
+      text-decoration: none;
     }
 
     .whatsapp-button {
@@ -102,6 +93,65 @@
       margin-right: 8px;
     }
 
+    /* Carrinho Popup */
+    .cart-popup {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .cart-popup-content {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+    }
+
+    .cart-popup-header {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .cart-items {
+      margin-bottom: 20px;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .cart-popup-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .close-cart {
+      background-color: #f44336;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .checkout-button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
   </style>
 </head>
 <body>
@@ -115,11 +165,7 @@
           <h2>Banana</h2>
           <p>R$3,50/kg</p>
         </div>
-        <div class="quantity-controls">
-          <button class="quantity-btn minus">-</button>
-          <span class="quantity">0</span>
-          <button class="quantity-btn plus">+</button>
-        </div>
+        <a href="#" class="add-to-cart" data-product="Banana" data-price="3.50">Adicionar ao carrinho</a>
       </div>
     </div>
 
@@ -130,11 +176,7 @@
           <h2>Maçã</h2>
           <p>R$5,50/kg</p>
         </div>
-        <div class="quantity-controls">
-          <button class="quantity-btn minus">-</button>
-          <span class="quantity">0</span>
-          <button class="quantity-btn plus">+</button>
-        </div>
+        <a href="#" class="add-to-cart" data-product="Maçã" data-price="5.50">Adicionar ao carrinho</a>
       </div>
     </div>
 
@@ -145,11 +187,7 @@
           <h2>Maracujá</h2>
           <p>R$10,00/kg</p>
         </div>
-        <div class="quantity-controls">
-          <button class="quantity-btn minus">-</button>
-          <span class="quantity">0</span>
-          <button class="quantity-btn plus">+</button>
-        </div>
+        <a href="#" class="add-to-cart" data-product="Maracujá" data-price="10.00">Adicionar ao carrinho</a>
       </div>
     </div>
 
@@ -160,11 +198,7 @@
           <h2>Uva</h2>
           <p>R$8,00/kg</p>
         </div>
-        <div class="quantity-controls">
-          <button class="quantity-btn minus">-</button>
-          <span class="quantity">0</span>
-          <button class="quantity-btn plus">+</button>
-        </div>
+        <a href="#" class="add-to-cart" data-product="Uva" data-price="8.00">Adicionar ao carrinho</a>
       </div>
     </div>
 
@@ -175,11 +209,7 @@
           <h2>Acerola</h2>
           <p>R$5,00/kg</p>
         </div>
-        <div class="quantity-controls">
-          <button class="quantity-btn minus">-</button>
-          <span class="quantity">0</span>
-          <button class="quantity-btn plus">+</button>
-        </div>
+        <a href="#" class="add-to-cart" data-product="Acerola" data-price="5.00">Adicionar ao carrinho</a>
       </div>
     </div>
 
@@ -190,46 +220,59 @@
           <h2>Morango</h2>
           <p>R$12,50/kg</p>
         </div>
-        <div class="quantity-controls">
-          <button class="quantity-btn minus">-</button>
-          <span class="quantity">0</span>
-          <button class="quantity-btn plus">+</button>
-        </div>
+        <a href="#" class="add-to-cart" data-product="Morango" data-price="12.50">Adicionar ao carrinho</a>
       </div>
     </div>
   </div>
-  
+
   <a class="whatsapp-button" href="https://wa.me/seunumero" target="_blank">
     <i class="fab fa-whatsapp"></i> Fale conosco no WhatsApp
   </a>
 
+  <!-- Carrinho Popup -->
+  <div class="cart-popup" id="cartPopup">
+    <div class="cart-popup-content">
+      <div class="cart-popup-header">Carrinho</div>
+      <div class="cart-items" id="cartItems">
+        <!-- Itens do carrinho serão adicionados aqui -->
+      </div>
+      <div class="cart-popup-footer">
+        <button class="close-cart" onclick="closeCart()">Fechar</button>
+        <button class="checkout-button">Finalizar Compra</button>
+      </div>
+    </div>
+  </div>
+
   <script>
-    document.querySelectorAll('.product-card').forEach(card => {
-      const minusBtn = card.querySelector('.minus');
-      const plusBtn = card.querySelector('.plus');
-      const quantityDisplay = card.querySelector('.quantity');
+    // Função para abrir o carrinho
+    const cartPopup = document.getElementById('cartPopup');
+    const cartItems = document.getElementById('cartItems');
 
-      let quantity = 0;
+    function openCart() {
+      cartPopup.style.display = 'flex';
+    }
 
-      const updateDisplay = () => {
-        if (quantity > 0) {
-          quantityDisplay.textContent = quantity;
-          quantityDisplay.style.display = 'block';
-        } else {
-          quantityDisplay.style.display = 'none';
-        }
-      };
+    // Função para fechar o carrinho
+    function closeCart() {
+      cartPopup.style.display = 'none';
+    }
 
-      plusBtn.addEventListener('click', () => {
-        quantity++;
-        updateDisplay();
-      });
+    // Função para adicionar um item ao carrinho
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+      button.addEventListener('click', function(event) {
+        event.preventDefault();
 
-      minusBtn.addEventListener('click', () => {
-        if (quantity > 0) {
-          quantity--;
-          updateDisplay();
-        }
+        const product = this.getAttribute('data-product');
+        const price = this.getAttribute('data-price');
+
+        const cartItem = document.createElement('div');
+        cartItem.classList.add('cart-item');
+        cartItem.innerHTML = `
+          <span>${product} - R$${price}</span>
+        `;
+
+        cartItems.appendChild(cartItem);
+        openCart();
       });
     });
   </script>
