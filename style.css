@@ -4,7 +4,7 @@ body { background-color: #f5efd7; font-family: Arial, sans-serif; color: #2f4f2f
 
 h1 { font-size: 2em; margin-bottom: 30px; }
 
-.product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; justify-items: center; }
+.product-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; justify-content: center; }
 
 .product-card { background-color: white; border-radius: 12px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 220px; overflow: hidden; display: flex; flex-direction: column; }
 
@@ -22,5 +22,7 @@ h1 { font-size: 2em; margin-bottom: 30px; }
 
 .whatsapp-button:hover { background-color: #1ebe5d; }
 
-@media (max-width: 768px) { .product-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; } }
+@media (max-width: 768px) { h1 { text-align: center; }
+
+.product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; justify-content: center; } }
 
