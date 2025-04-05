@@ -5,6 +5,12 @@ body {
   font-family: sans-serif;
 }
 
+img.logo {
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
 .produtos {
   color: black;
 }
