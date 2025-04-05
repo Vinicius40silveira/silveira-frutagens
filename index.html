@@ -1,103 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Silveira Frutagens</title>
-  <link rel="stylesheet" href="styles.css"> <!-- Link para o arquivo CSS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Produtos</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <img src="img/frutagens.png" alt="Logo Silveira Frutagens" class="logo">
-    <button class="cart-icon">
-      <i class="fas fa-shopping-cart"></i>
-      <div class="notification">0</div> <!-- Notificação de quantidade de produtos -->
-    </button>
-  </header>
 
-  <div class="product-grid">
-    <!-- Produto Exemplo 1 -->
-    <div class="product-card" data-product-id="1">
-      <img src="img/banana.png" alt="Banana">
-      <div class="product-text">
-        <h2>Banana</h2>
-        <p>R$3,50/kg</p>
-        <button class="add-to-cart">Adicionar ao Carrinho</button>
-      </div>
+    <!-- Logo -->
+    <img src="logo.png" alt="Logo da Loja" class="logo">
+
+    <!-- Grade de produtos -->
+    <div class="product-grid">
+        <!-- Produto 1 -->
+        <div class="product-card">
+            <img src="banana.jpg" alt="Banana">
+            <div class="product-text">
+                <h2>Banana</h2>
+                <p>R$ 5,00</p>
+                <div class="quantity-control">
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                </div>
+                <div class="cart-notification" id="cart-notification-1">1</div>
+                <button class="add-to-cart" data-product="banana">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+
+        <!-- Produto 2 -->
+        <div class="product-card">
+            <img src="maca.jpg" alt="Maçã">
+            <div class="product-text">
+                <h2>Maçã</h2>
+                <p>R$ 3,00</p>
+                <div class="quantity-control">
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                </div>
+                <div class="cart-notification" id="cart-notification-2">1</div>
+                <button class="add-to-cart" data-product="maca">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+
+        <!-- Adicione mais produtos aqui conforme necessário -->
     </div>
 
-    <!-- Produto Exemplo 2 -->
-    <div class="product-card" data-product-id="2">
-      <img src="img/maçã.png" alt="Maçã">
-      <div class="product-text">
-        <h2>Maçã</h2>
-        <p>R$5,50/kg</p>
-        <button class="add-to-cart">Adicionar ao Carrinho</button>
-      </div>
+    <!-- Botão de WhatsApp -->
+    <a href="https://wa.me/123456789" class="whatsapp-button">
+        <i class="fab fa-whatsapp"></i> Fale Conosco
+    </a>
+
+    <!-- Carrinho de Compras (Popup) -->
+    <div class="cart-popup" id="cart-popup">
+        <div class="cart-popup-content">
+            <div class="cart-popup-header">
+                Carrinho de Compras
+            </div>
+            <div class="cart-items" id="cart-items">
+                <!-- Itens do carrinho serão adicionados aqui -->
+            </div>
+            <button class="checkout-button">Finalizar Compra</button>
+            <button class="close-cart" id="close-cart">Fechar</button>
+        </div>
     </div>
 
-    <!-- Produto Exemplo 3 -->
-    <div class="product-card" data-product-id="3">
-      <img src="img/maracuja.png" alt="Maracujá">
-      <div class="product-text">
-        <h2>Maracujá</h2>
-        <p>R$10,00/kg</p>
-        <button class="add-to-cart">Adicionar ao Carrinho</button>
-      </div>
+    <!-- Ícone de Carrinho -->
+    <div class="cart-icon" id="cart-icon">
+        <i class="fas fa-shopping-cart"></i>
+        <div class="cart-notification" id="cart-count">0</div>
     </div>
 
-    <!-- Produto Exemplo 4 -->
-    <div class="product-card" data-product-id="4">
-      <img src="img/uva.png" alt="Uva">
-      <div class="product-text">
-        <h2>Uva</h2>
-        <p>R$8,00/kg</p>
-        <button class="add-to-cart">Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <!-- Produto Exemplo 5 -->
-    <div class="product-card" data-product-id="5">
-      <img src="img/acerola.png" alt="Acerola">
-      <div class="product-text">
-        <h2>Acerola</h2>
-        <p>R$5,00/kg</p>
-        <button class="add-to-cart">Adicionar ao Carrinho</button>
-      </div>
-    </div>
-
-    <!-- Produto Exemplo 6 -->
-    <div class="product-card" data-product-id="6">
-      <img src="img/morango.png" alt="Morango">
-      <div class="product-text">
-        <h2>Morango</h2>
-        <p>R$12,50/kg</p>
-        <button class="add-to-cart">Adicionar ao Carrinho</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Carrinho (Popup) -->
-  <div class="cart-popup">
-    <div class="cart-popup-content">
-      <div class="cart-popup-header">
-        <h2>Carrinho de Compras</h2>
-        <button class="close-cart">Fechar</button>
-      </div>
-      <div class="cart-items">
-        <!-- Itens do carrinho serão adicionados dinamicamente -->
-      </div>
-      <div class="cart-popup-footer">
-        <button class="checkout-button">Finalizar Compra</button>
-      </div>
-    </div>
-  </div>
-
-  <a class="whatsapp-button" href="https://wa.me/seunumero" target="_blank">
-    <i class="fab fa-whatsapp"></i> Fale conosco no WhatsApp
-  </a>
-
-  <script src="script.js"></script> <!-- Link para o arquivo JavaScript -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
