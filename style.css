@@ -63,173 +63,79 @@ body {
   font-size: 15px;
 }
 
-/* Botões de quantidade */
-.quantity-control {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 8px;
-}
-
-.quantity-control button {
-  background-color: white;
-  color: #2e7d4f;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 8px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.quantity-control span {
-  font-weight: bold;
-  font-size: 16px;
-}
-
-/* Carrinho de compras (popup) */
-#cart-popup {
+/* Carrinho de compras popup */
+.cart-popup {
+  display: none;
   position: fixed;
   top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.8); /* Fundo sólido */
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-#cart-popup .cart-content {
-  background-color: white;
-  padding: 20px;
-  width: 400px;
-  border-radius: 12px;
-  overflow-y: auto;
-  max-height: 80vh;
-}
-
-#cart-popup .cart-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 18px;
-  margin-bottom: 20px;
-}
-
-#cart-popup .cart-header span {
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.cart-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
-  background-color: #f1f1f1;
-  padding: 10px;
-  border-radius: 8px;
-}
-
-.cart-item img {
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
-}
-
-.cart-item-info {
-  flex-grow: 1;
-  padding-left: 10px;
-}
-
-#cart-total {
-  font-size: 18px;
-  font-weight: bold;
-  text-align: right;
-  margin-top: 20px;
-}
-
-#checkout-button {
-  background-color: #25D366;
-  color: white;
-  font-size: 16px;
-  padding: 12px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
   width: 100%;
-  margin-top: 20px;
-}
-
-#checkout-button:hover {
-  background-color: #128C7E;
-}
-
-/* Botão de WhatsApp (icônico, sem texto) */
-.whatsapp-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #25D366;
-  color: white;
-  font-size: 32px;
-  padding: 15px;
-  border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  display: flex;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
   justify-content: center;
   align-items: center;
-  z-index: 1000;
-  transition: background-color 0.3s ease;
 }
 
-.whatsapp-button:hover {
-  background-color: #128C7E;
+.cart-popup-content {
+  background: white;
+  padding: 20px;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-.whatsapp-button i {
-  margin: 0;
+.cart-popup-content h2 {
+  margin: 0 0 15px;
 }
 
-/* Ícone do Carrinho */
-#cart-icon {
-  position: fixed;
-  bottom: 20px;
-  left: 20px; /* Carrinho no lado oposto do WhatsApp */
+.cart-popup-content button {
+  margin-top: 15px;
   background-color: #2e7d4f;
   color: white;
-  font-size: 32px;
-  padding: 15px;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cart-popup-content button:hover {
+  background-color: #1e5c3b;
+}
+
+/* Ícones fixos (Carrinho e WhatsApp) */
+.fixed-icons {
+  position: fixed;
+  bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.whatsapp-icon,
+.cart-icon {
+  background-color: #25D366;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s;
 }
 
-#cart-icon:hover {
+.whatsapp-icon:hover,
+.cart-icon:hover {
   background-color: #128C7E;
 }
 
-#cart-notification-icon {
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  background-color: red;
-  color: white;
-  font-size: 12px;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.whatsapp-icon-img,
+.cart-icon-img {
+  width: 35px;
+  height: 35px;
 }
 
 /* Responsivo */
@@ -237,7 +143,8 @@ body {
   .product-grid {
     grid-template-columns: 1fr;
   }
-  .cart-content {
-    width: 90%;
+
+  .logo {
+    max-width: 220px;
   }
 }
