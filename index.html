@@ -1,21 +1,17 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Silveira Frutagens</title>
-  <link rel="stylesheet" href="style.css">
   <style>
     body {
-      margin: 0;
+      background-color: #f3ecd9; /* Cor exata da imagem */
       font-family: Arial, sans-serif;
-      background: url('img/fundo.png') no-repeat center center fixed;
-      background-size: cover;
-      color: #f3ecd9;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      color: white; /* Deixa o texto branco */
+      text-align: center;
       padding: 20px;
+      margin: 0;
     }
 
     img.logo {
@@ -24,84 +20,68 @@
       margin-bottom: 20px;
     }
 
-    .produtos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      width: 100%;
-      max-width: 800px;
-    }
-
-    .produto {
-      background-color: #ffffffcc;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-
-    .produto img {
-      width: 80px;
-      height: 80px;
-      object-fit: contain;
+    h1 {
+      font-size: 2em;
       margin-bottom: 10px;
     }
 
-    .whatsapp-btn {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto 30px;
+      max-width: 400px;
+      text-align: left;
+    }
+
+    li {
+      font-size: 1.2em;
+      margin: 8px 0;
+    }
+
+    .whatsapp-button {
       display: inline-block;
-      margin-top: 30px;
       background-color: #25D366;
       color: white;
-      padding: 15px 25px;
-      border: none;
-      border-radius: 30px;
-      font-size: 16px;
+      padding: 12px 20px;
+      font-size: 1.2em;
       text-decoration: none;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      border-radius: 8px;
       transition: background-color 0.3s;
     }
 
-    .whatsapp-btn:hover {
-      background-color: #20b954;
+    .whatsapp-button:hover {
+      background-color: #1ebe5d;
     }
 
     @media (max-width: 600px) {
-      .produtos {
-        grid-template-columns: 1fr;
+      ul {
+        max-width: 90%;
+        text-align: center;
+      }
+
+      li {
+        font-size: 1.1em;
       }
     }
   </style>
 </head>
-<body>  </>
+<body>
 
-  <div class="produtos">
-    <div class="produto">
-      <img src="img/banana.png" alt="Banana" />
-      <strong>Banana:</strong> R$3,50/kg
-    </div>
-    <div class="produto">
-      <img src="img/maca.png" alt="Maçã" />
-      <strong>Maçã:</strong> R$5,50/kg
-    </div>
-    <div class="produto">
-      <img src="img/maracuja.png" alt="Maracujá" />
-      <strong>Maracujá:</strong> R$10,00/kg
-    </div>
-    <div class="produto">
-      <img src="img/uva.png" alt="Uva" />
-      <strong>Uva:</strong> R$8,00/kg
-    </div>
-    <div class="produto">
-      <img src="img/acerola.png" alt="Acerola" />
-      <strong>Acerola:</strong> R$5,00/kg
-    </div>
-    <div class="produto">
-      <img src="img/morango.png" alt="Morango" />
-      <strong>Morango:</strong> R$12,50/kg
-    </div>
-  </div>
+  <img src="img/frutagens.png" alt="Logo Silveira Frutagens" class="logo">
 
-  <a class="whatsapp-btn" href="https://wa.me/SEUNUMERO" target="_blank">Fale conosco no WhatsApp</a>
+  <h1>Produtos</h1>
+  <ul>
+    <li>Banana: R$3,50/kg</li>
+    <li>Maçã: R$5,50/kg</li>
+    <li>Maracujá: R$10,00/kg</li>
+    <li>Uva: R$8,00/kg</li>
+    <li>Acerola: R$5,00/kg</li>
+    <li>Morango: R$12,50/kg</li>
+  </ul>
+
+  <a class="whatsapp-button" href="https://wa.me/seunumero" target="_blank">
+    Fale conosco no WhatsApp
+  </a>
 
 </body>
 </html>
