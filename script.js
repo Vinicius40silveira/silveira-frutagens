@@ -1,107 +1,60 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const cart = {}; // Objeto para armazenar os itens do carrinho
-    const cartIcon = document.getElementById("cart-icon");
-    const cartNotification = document.getElementById("cart-notification-icon");
-    const cartPopup = document.getElementById("cart-popup");
-    const cartItemsContainer = document.getElementById("cart-items");
-    const closeCartButton = document.getElementById("close-cart");
+document.addEventListener('DOMContentLoaded', () => {
+  const cartPopup = document.getElementById('cart-popup');
+  const openCartBtn = document.getElementById('open-cart');
+  const closeCartBtn = document.getElementById('close-cart');
+  const cartItemsContainer = document.getElementById('cart-items');
+  const addToCartButtons = document.querySelectorAll('.add-to-cart');
 
-    // Evento para adicionar ao carrinho
-    const addToCartButtons = document.querySelectorAll(".add-to-cart");
+  let cart = [];
 
-    addToCartButtons.forEach((button) => {
-        button.addEventListener("click", (event) => {
-            const productName = event.target.dataset.product;
-            const productPrice = parseFloat(event.target.dataset.price);
-            const productImage = event.target.dataset.image;
+  // Função para abrir o carrinho
+  openCartBtn.addEventListener('click', () => {
+    cartPopup.style.display = 'flex';
+    displayCartItems();
+  });
 
-            // Se o produto já estiver no carrinho, aumentar a quantidade
-            if (cart[productName]) {
-                cart[productName].quantity += 1;
-            } else {
-                cart[productName] = {
-                    name: productName,
-                    price: productPrice,
-                    image: productImage,
-                    quantity: 1
-                };
-            }
+  // Função para fechar o carrinho
+  closeCartBtn.addEventListener('click', () => {
+    cartPopup.style.display = 'none';
+  });
 
-            // Atualiza o carrinho na interface
-            updateCart();
-        });
+  // Adicionar itens ao carrinho
+  addToCartButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const productName = button.getAttribute('data-product');
+      const productPrice = parseFloat(button.getAttribute('data-price'));
+      const productImage = button.getAttribute('data-image');
+
+      const productIndex = cart.findIndex(item => item.name === productName);
+
+      if (productIndex === -1) {
+        cart.push({ name: productName, price: productPrice, image: productImage, quantity: 1 });
+      } else {
+        cart[productIndex].quantity++;
+      }
+
+      displayCartItems();
     });
+  });
 
-    // Função para atualizar o carrinho
-    function updateCart() {
-        cartItemsContainer.innerHTML = ''; // Limpa o carrinho
-        let total = 0;
-        let totalItems = 0;
+  // Exibir itens do carrinho no popup
+  function displayCartItems() {
+    cartItemsContainer.innerHTML = '';
 
-        for (const productName in cart) {
-            const item = cart[productName];
-            total += item.price * item.quantity;
-            totalItems += item.quantity;
-
-            // Cria o item de carrinho
-            const cartItem = document.createElement('div');
-            cartItem.classList.add('cart-item');
-            cartItem.innerHTML = `
-                <img src="${item.image}" alt="${item.name}">
-                <div class="cart-item-info">
-                    <h3>${item.name}</h3>
-                    <p>R$ ${item.price.toFixed(2)}</p>
-                </div>
-                <div class="quantity-control">
-                    <button onclick="changeQuantity('${item.name}', 1)">+</button>
-                    <span>${item.quantity}</span>
-                    <button onclick="changeQuantity('${item.name}', -1)">-</button>
-                </div>
-            `;
-            cartItemsContainer.appendChild(cartItem);
-        }
-
-        // Atualiza a notificação do carrinho
-        cartNotification.textContent = totalItems;
-        document.getElementById("cart-total-value").textContent = `R$ ${total.toFixed(2)}`;
+    if (cart.length === 0) {
+      cartItemsContainer.innerHTML = '<p>Carrinho vazio</p>';
+    } else {
+      cart.forEach(item => {
+        const itemElement = document.createElement('div');
+        itemElement.classList.add('cart-item');
+        itemElement.innerHTML = `
+          <img src="${item.image}" alt="${item.name}" width="50">
+          <span>${item.name}</span>
+          <span>R$ ${item.price.toFixed(2)}</span>
+          <span>Quantidade: ${item.quantity}</span>
+        `;
+        cartItemsContainer.appendChild(itemElement);
+      });
     }
-
-    // Função para alterar a quantidade do produto
-    window.changeQuantity = (productName, delta) => {
-        if (cart[productName]) {
-            cart[productName].quantity += delta;
-
-            if (cart[productName].quantity <= 0) {
-                delete cart[productName]; // Remove o produto do carrinho se a quantidade for zero ou negativa
-            }
-
-            // Atualiza o carrinho na interface
-            updateCart();
-        }
-    };
-
-    // Evento para abrir o carrinho
-    cartIcon.addEventListener("click", () => {
-        cartPopup.style.display = "flex"; // Abre o popup do carrinho
-    });
-
-    // Evento para fechar o carrinho
-    closeCartButton.addEventListener("click", () => {
-        cartPopup.style.display = "none"; // Fecha o popup do carrinho
-    });
-
-    // Funcionalidade para finalizar a compra
-    const checkoutButton = document.getElementById("checkout-button");
-    checkoutButton.addEventListener("click", () => {
-        if (Object.keys(cart).length === 0) {
-            alert("Seu carrinho está vazio!");
-        } else {
-            alert("Compra finalizada com sucesso!");
-            // Limpar o carrinho após a finalização
-            for (const product in cart) {
-                delete cart[product];
-            }
-            updateCart(); // Atualiza o carrinho
-        }
-    });
+  }
 });
