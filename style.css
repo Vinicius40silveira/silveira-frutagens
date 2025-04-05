@@ -175,57 +175,34 @@ body {
   background-color: #25D366;
   color: white;
   padding: 5px 10px;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin: 0 5px;
-}
-
-.cart-total {
-  margin-top: 20px;
-  font-size: 18px;
-}
-
-.close-button {
-  background-color: #f44336;
-  color: white;
   border: none;
-  padding: 8px;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.close-button:hover {
-  background-color: #d32f2f;
+.cart-item .quantity-control button:hover {
+  background-color: #1ebe5d;
 }
 
-/* Botão do WhatsApp */
-.whatsapp-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #25d366;
-  color: white;
+/* Total do Carrinho */
+.cart-total {
+  font-size: 18px;
   font-weight: bold;
-  border-radius: 8px;
-  padding: 10px 16px;
-  text-decoration: none;
-  font-size: 14px;
-  margin: 20px auto;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.whatsapp-button i {
-  margin-right: 8px;
+#checkout-button {
+  background-color: #25D366;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
 }
 
-/* Responsivo */
-@media (max-width: 768px) {
-  .product-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .cart-icon {
-    font-size: 25px;
-    padding: 12px;
-  }
+#checkout-button:hover {
+  background-color: #1ebe5d;
 }
