@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Silveira Frutagens</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('img/fundo.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #2e3d22;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    img.logo {
+      max-width: 300px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .produtos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .produto {
+      background-color: #ffffffcc;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .produto img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+
+    .whatsapp-btn {
+      display: inline-block;
+      margin-top: 30px;
+      background-color: #25D366;
+      color: white;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      text-decoration: none;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      transition: background-color 0.3s;
+    }
+
+    .whatsapp-btn:hover {
+      background-color: #20b954;
+    }
+
+    @media (max-width: 600px) {
+      .produtos {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <img src="img/frutagens.png" alt="Logo da Silveira Frutagens" class="logo" />
+
+  <div class="produtos">
+    <div class="produto">
+      <img src="img/banana.png" alt="Banana" />
+      <strong>Banana:</strong> R$3,50/kg
+    </div>
+    <div class="produto">
+      <img src="img/maca.png" alt="Maçã" />
+      <strong>Maçã:</strong> R$5,50/kg
+    </div>
+    <div class="produto">
+      <img src="img/maracuja.png" alt="Maracujá" />
+      <strong>Maracujá:</strong> R$10,00/kg
+    </div>
+    <div class="produto">
+      <img src="img/uva.png" alt="Uva" />
+      <strong>Uva:</strong> R$8,00/kg
+    </div>
+    <div class="produto">
+      <img src="img/acerola.png" alt="Acerola" />
+      <strong>Acerola:</strong> R$5,00/kg
+    </div>
+    <div class="produto">
+      <img src="img/morango.png" alt="Morango" />
+      <strong>Morango:</strong> R$12,50/kg
+    </div>
+  </div>
+
+  <a class="whatsapp-btn" href="https://wa.me/SEUNUMERO" target="_blank">Fale conosco no WhatsApp</a>
+
+</body>
+</html>
