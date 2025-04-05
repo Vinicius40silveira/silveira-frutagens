@@ -45,55 +45,7 @@
             </div>
         </div>
 
-        <!-- Produto 3 - Uva -->
-        <div class="product-card">
-            <img src="uva.png" alt="Uva">
-            <div class="product-text">
-                <h2>Uva</h2>
-                <p>R$ 7,00/kg</p>
-                <div class="quantity-control">
-                    <button class="quantity-decrease">-</button>
-                    <span class="quantity">1</span>
-                    <button class="quantity-increase">+</button>
-                </div>
-                <div class="cart-notification" id="cart-notification-3">0</div>
-                <button class="add-to-cart" data-product="uva">Adicionar ao Carrinho</button>
-            </div>
-        </div>
-
-        <!-- Produto 4 - Acerola -->
-        <div class="product-card">
-            <img src="acerola.png" alt="Acerola">
-            <div class="product-text">
-                <h2>Acerola</h2>
-                <p>R$ 6,00/kg</p>
-                <div class="quantity-control">
-                    <button class="quantity-decrease">-</button>
-                    <span class="quantity">1</span>
-                    <button class="quantity-increase">+</button>
-                </div>
-                <div class="cart-notification" id="cart-notification-4">0</div>
-                <button class="add-to-cart" data-product="acerola">Adicionar ao Carrinho</button>
-            </div>
-        </div>
-
-        <!-- Produto 5 - Morango -->
-        <div class="product-card">
-            <img src="morango.png" alt="Morango">
-            <div class="product-text">
-                <h2>Morango</h2>
-                <p>R$ 8,00/kg</p>
-                <div class="quantity-control">
-                    <button class="quantity-decrease">-</button>
-                    <span class="quantity">1</span>
-                    <button class="quantity-increase">+</button>
-                </div>
-                <div class="cart-notification" id="cart-notification-5">0</div>
-                <button class="add-to-cart" data-product="morango">Adicionar ao Carrinho</button>
-            </div>
-        </div>
-
-        <!-- Produto 6 - Maracujá -->
+        <!-- Produto 3 - Maracujá -->
         <div class="product-card">
             <img src="maracuja.png" alt="Maracujá">
             <div class="product-text">
@@ -104,8 +56,56 @@
                     <span class="quantity">1</span>
                     <button class="quantity-increase">+</button>
                 </div>
-                <div class="cart-notification" id="cart-notification-6">0</div>
+                <div class="cart-notification" id="cart-notification-3">0</div>
                 <button class="add-to-cart" data-product="maracuja">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+
+        <!-- Produto 4 - Uva -->
+        <div class="product-card">
+            <img src="uva.png" alt="Uva">
+            <div class="product-text">
+                <h2>Uva</h2>
+                <p>R$ 7,00/kg</p>
+                <div class="quantity-control">
+                    <button class="quantity-decrease">-</button>
+                    <span class="quantity">1</span>
+                    <button class="quantity-increase">+</button>
+                </div>
+                <div class="cart-notification" id="cart-notification-4">0</div>
+                <button class="add-to-cart" data-product="uva">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+
+        <!-- Produto 5 - Acerola -->
+        <div class="product-card">
+            <img src="acerola.png" alt="Acerola">
+            <div class="product-text">
+                <h2>Acerola</h2>
+                <p>R$ 6,00/kg</p>
+                <div class="quantity-control">
+                    <button class="quantity-decrease">-</button>
+                    <span class="quantity">1</span>
+                    <button class="quantity-increase">+</button>
+                </div>
+                <div class="cart-notification" id="cart-notification-5">0</div>
+                <button class="add-to-cart" data-product="acerola">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+
+        <!-- Produto 6 - Morango -->
+        <div class="product-card">
+            <img src="morango.png" alt="Morango">
+            <div class="product-text">
+                <h2>Morango</h2>
+                <p>R$ 8,00/kg</p>
+                <div class="quantity-control">
+                    <button class="quantity-decrease">-</button>
+                    <span class="quantity">1</span>
+                    <button class="quantity-increase">+</button>
+                </div>
+                <div class="cart-notification" id="cart-notification-6">0</div>
+                <button class="add-to-cart" data-product="morango">Adicionar ao Carrinho</button>
             </div>
         </div>
     </div>
@@ -117,4 +117,23 @@
 
     <!-- Carrinho de Compras (Popup) -->
     <div class="cart-popup" id="cart-popup">
-        <div
+        <div class="cart-popup-content">
+            <div class="cart-popup-header">
+                Carrinho de Compras
+            </div>
+            <div class="cart-items" id="cart-items">
+                <!-- Itens do carrinho aparecerão aqui -->
+            </div>
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-value">R$ 0,00</span>
+            </div>
+            <button id="checkout-button">Finalizar Compra</button>
+            <button id="close-cart" class="close-button">Fechar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
